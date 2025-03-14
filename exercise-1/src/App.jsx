@@ -1,20 +1,23 @@
-import React from "react";
-import Header from "./components/header.jsx";
-import Scores from "./components/Scores.jsx";
-import { JAVA_RESULTS, PYTHON_RESULTS, HTML_RESULTS, ENGLISH_RESULTS } from "./data.js";
-
+import Header from "./components/header";
+import { JAVA_RESULTS } from "./data";
+import { PYTHON_RESULTS } from "./data";
+import { HTML_RESULTS } from "./data";
+import { ENGLISH_RESULTS } from "./data";
+import Score from "./components/Score";
+ 
 function App() {
+  const batchName = "Batch 2025";
   return (
     <>
-      <Header batchName="NPC batch 2024" />
-      <main className="scores-container">
-        <Scores courseName="Java" results={JAVA_RESULTS} />
-        <Scores courseName="Python" results={PYTHON_RESULTS} />
-        <Scores courseName="HTML" results={HTML_RESULTS} />
-        <Scores courseName="English" results={ENGLISH_RESULTS} />
+    <Header batchName={batchName} className="header" />
+    <main className="scores-container">
+      <Score courseName="Java" courseResults={JAVA_RESULTS} />
+      <Score courseName="Python" courseResults={PYTHON_RESULTS} />
+      <Score courseName="HTML" courseResults={HTML_RESULTS} />
+      <Score courseName="English" courseResults={ENGLISH_RESULTS} />
       </main>
     </>
-  );
-}
-
-export default App;
+   );
+ }
+ 
+ export default App;
